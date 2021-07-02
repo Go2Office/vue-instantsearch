@@ -153,7 +153,12 @@ export default {
     },
     sortBy: {
       type: [Array, Function],
-      default: () => ['isRefined', 'count:desc', 'name:asc'],
+      default: undefined,
+      required: false,
+    },
+    facetOrdering: {
+      type: Boolean,
+      default: undefined,
       required: false,
     },
     transformItems: {
@@ -199,6 +204,7 @@ export default {
         showMore: this.showMore,
         showMoreLimit: this.showMoreLimit,
         sortBy: this.sortBy,
+        facetOrdering: this.facetOrdering,
         escapeFacetValues: true,
         transformItems: this.transformItems,
       };

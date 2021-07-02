@@ -84,9 +84,13 @@ export default {
     },
     sortBy: {
       type: [Array, Function],
-      default() {
-        return ['count:desc', 'name:asc'];
-      },
+      default: undefined,
+      required: false,
+    },
+    facetOrdering: {
+      type: Boolean,
+      default: undefined,
+      required: false,
     },
     transformItems: {
       type: Function,
@@ -103,6 +107,7 @@ export default {
         showMore: this.showMore,
         showMoreLimit: this.showMoreLimit,
         sortBy: this.sortBy,
+        facetOrdering: this.facetOrdering,
         transformItems: this.transformItems,
       };
     },

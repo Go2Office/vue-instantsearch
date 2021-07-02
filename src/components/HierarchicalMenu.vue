@@ -80,9 +80,13 @@ export default {
     },
     sortBy: {
       type: [Array, Function],
-      default() {
-        return ['name:asc'];
-      },
+      default: undefined,
+      required: false,
+    },
+    facetOrdering: {
+      type: Boolean,
+      default: undefined,
+      required: false,
     },
     separator: {
       type: String,
@@ -114,6 +118,7 @@ export default {
         rootPath: this.rootPath,
         showParentLevel: this.showParentLevel,
         sortBy: this.sortBy,
+        facetOrdering: this.facetOrdering,
         transformItems: this.transformItems,
       };
     },
